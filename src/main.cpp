@@ -37,6 +37,12 @@ void loop() {
     // Read analog value from FSR
     fsrValue = analogRead(FSR_PIN);
 
+    // Convert ADC value to percentage
+    int percentage = map(fsrValue, 0, 1023, 0, 100);
+    Serial.print("Force Percentage: ");
+    Serial.print(percentage);
+    Serial.println(" %");
+
     // TODO 6:
     // Print raw ADC value
     Serial.print("Raw ADC Value: ");
